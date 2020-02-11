@@ -31,7 +31,7 @@ export const actions = {
         commit("SET_REVIEWS", response.data.reviews);
       })
       .catch(err => {
-        console.log("There was an error retrieving reviews");
+        console.log(err);
       });
   },
   fetchImages({ commit }) {
