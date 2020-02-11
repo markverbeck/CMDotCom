@@ -69,6 +69,7 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
+    performance: { hints: false },
     extend(config, ctx) {}
   }
 };
