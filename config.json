@@ -1,0 +1,15 @@
+{
+  "AWS_Access_Key_ID": "AKIAJCH7LJJQFP6IJSQA",
+  "AWS_Secret_Access_Key": "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",
+  "Bucket": "carley-martin-dot-com",
+  "sandbox": {
+    "path": "https://connect.squareupsandbox.com",
+    "squareApplicationId": "sandbox-sq0idb-ANYL_Op6Ro2VFGz8FaGjsw",
+    "squareAccessToken": "EAAAEDFoHAv4pMy_ApAqSMoSaWoab0w1F6SLgFpX6nacfxGZliChPLJviuZBdNlr"
+  },
+  "production": {
+    "path": "https://connect.squareup.com",
+    "squareApplicationId": "sq0idp-72wRMQ-nf_MIpzBU646euQ",
+    "squareAccessToken": "EAAAELTL74Q4fr7au7CqExtA3VjhP9e_rJNsfxZAGxbf7tlgVYr8czlR2ZMOf247"
+  }
+}
