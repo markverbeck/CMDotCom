@@ -16,8 +16,6 @@ const reviewClient = axios.create({
 export default {
   getReviews() {
     return reviewClient.get("/carley-martin-overland-park-10/reviews");
-
-    console.log(err);
   },
   async getImages() {
     try {
@@ -32,22 +30,7 @@ export default {
         .listObjectsV2({
           Bucket: config.Bucket
         })
-        .promise((err, data) => {
-          console.log("hanging under the promise");
-          if (data) {
-            console.log("images retrieved");
-            next();
-          }
-          if (err) {
-            console.log("hanging under the if err");
-            console.log(err);
-            next(err);
-          }
-        })
-        .catch(err => {
-          console.log("hanging under the catch");
-          console.log(err);
-        });
+        .promise();
 
       return response;
     } catch (err) {
