@@ -49,12 +49,6 @@ module.exports = {
       pathRewrite: {
         "^/api": "/"
       }
-    },
-    "/images": {
-      target: "https://carley-martin-dot-com.s3.us-west-2.amazonaws.com/",
-      pathRewrite: {
-        "^/images": "/"
-      }
     }
   },
   /*
