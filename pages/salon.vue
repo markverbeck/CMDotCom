@@ -11,10 +11,10 @@
       class="w-11/12 sm:w-5/6 flex m-auto border-teal-500 shadow-lg border-4 rounded bg-white mt-10 mb-10"
     >
       <div class="w-full overflow-hidden">
-        <!-- <iframe
+        <iframe
           src="https://squareup.com/appointments/buyer/widget/1f2ahdn7uompb2/C6Q1TC96NTSR2"
           style="min-height: 500px; width: 100%; height: 100%; border: none;"
-        ></iframe> -->
+        ></iframe>
       </div>
     </div>
   </div>
