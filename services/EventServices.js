@@ -24,7 +24,11 @@ const getImages = axios.create({
 
 export default {
   getReviews() {
-    return reviewClient.get("/carley-martin-overland-park-10/reviews");
+    try {
+      return reviewClient.get("/carley-martin-overland-park-10/reviews");
+    } catch (err) {
+      console.log(err);
+    }
   },
   async getImages() {
     try {
