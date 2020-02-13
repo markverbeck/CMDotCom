@@ -13,22 +13,11 @@ const reviewClient = axios.create({
   }
 });
 
-const getImages = axios.create({
-  baseURL: "/images",
-  withCredentials: false,
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
-
 export default {
   getReviews() {
-    try {
-      return reviewClient.get("/carley-martin-overland-park-10/reviews");
-    } catch (err) {
-      console.log(err);
-    }
+    return reviewClient.get("/carley-martin-overland-park-10/reviews");
+
+    console.log(err);
   },
   async getImages() {
     try {
@@ -43,16 +32,20 @@ export default {
         .listObjectsV2({
           Bucket: config.Bucket
         })
-        .promise();
+        .promise((err, data) => {
+          if (data) {
+            console.log("images retrieved");
+            next();
+          }
+          if (err) {
+            console.log(err);
+            next(err);
+          }
+        });
+
       return response;
     } catch (err) {
       console.log(err);
     }
   }
-  // getEvent(id) {
-  //   return apiClient.get('/events/' + id)
-  // },
-  // postEvent(event) {
-  //   return apiClient.post('/events', event)
-  // }
 };
