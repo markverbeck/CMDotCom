@@ -3,9 +3,9 @@
     <Hero />
     <h1
       class="text-center text-2xl text-teal-500 font-bold mt-10 bg-white
-     w-11/12 sm:w-5/6 md:w-1/3 m-auto border-teal-500 shadow-lg border-2 rounded pt-5 pb-5 bridal relative"
+     w-11/12 sm:w-5/6 md:w-1/3 m-auto border-teal-500 shadow-lg border-2 rounded pt-5 pb-5 commercial relative"
     >
-      Bridal Images
+      Commercial Images
     </h1>
     <div
       class="flex flex-col md:flex-row w-11/12 sm:w-5/6 m-auto  md:pt-3 pb-3 pl-3 md:pl-5 pr-3 md:pr-5 imgContain border-4 border-teal-500 shadow-lg bg-white rounded mt-10 mb-10"
