@@ -24,9 +24,7 @@
 
 <script>
 export default {
-  mounted() {
-    console.log("hi");
-  }
+  mounted() {}
 };
 </script>
 
@@ -38,9 +36,15 @@ export default {
 }
 .salonName {
   text-shadow: 0px 2px #37b2ab;
+  @media (max-width: 1023px) {
+    text-shadow: 0px 2px #fff;
+  }
 }
 h2 {
   text-shadow: 0px 1px #37b2ab;
+  @media (max-width: 1023px) {
+    text-shadow: 0px 2px #fff;
+  }
 }
 .salonHero {
   background-image: url("../assets/alysa-bajenaru-88IV5AtWjB8-unsplash.jpg");
@@ -49,7 +53,7 @@ h2 {
   background-image: linear-gradient(to right, transparent 25%, #fff 75%, #fff);
   @media (max-width: 1023px) {
     background-image: none;
-    background: rgba(225, 225, 225, 0.4);
+    background: rgba(225, 225, 225, 0.6);
   }
 }
 </style>
