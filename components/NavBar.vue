@@ -79,7 +79,7 @@ export default {
   data() {
     return {
       mobileStyle: {
-        transition: ".5s",
+        transition: "",
         height: "0px",
         opacity: "0"
       }
@@ -88,9 +88,12 @@ export default {
   methods: {
     openCloseModal() {
       if (this.mobileStyle.height === "0px") {
+        this.mobileStyle.transition =
+          "height .5s ease-in-out, opacity .1s ease-in .3s";
         this.mobileStyle.height = "125px";
         this.mobileStyle.opacity = "1";
       } else {
+        this.mobileStyle.transition = "height .5s ease-in-out, opacity .2s";
         this.mobileStyle.height = "0px";
         this.mobileStyle.opacity = "0";
       }
