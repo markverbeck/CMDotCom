@@ -10,6 +10,7 @@
 <script>
 import Navbar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
+import "nprogress/nprogress.css";
 export default {
   components: {
     Navbar,
