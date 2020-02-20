@@ -75,13 +75,13 @@ export default {
       returnedReviews: this.reviews
     };
   },
-  created() {
-    if (process.client) {
-      NProgress.start();
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
       this.$store.dispatch("fetchReviews").then(() => {
-        NProgress.done();
+        this.$nuxt.$loading.finish();
       });
-    }
+    });
   },
   computed: {
     ...mapState(["reviews"])
