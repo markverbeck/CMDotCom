@@ -1,7 +1,7 @@
 import axios from "axios";
 import aws from "aws-sdk";
 import config from "../config.json";
-
+import NProgress from "nprogress";
 const reviewClient = axios.create({
   baseURL: "/api",
   withCredentials: false,
@@ -12,6 +12,17 @@ const reviewClient = axios.create({
       "Bearer htQ8amSVXNdGeoDj8RIle3LPvDsPpC7a61-2bXEnOyB79wzSpXMV0Jom15IWBiXAN4SqjHUWClJNe6s5aHzsbFj_ZagxQPlKAjGsOofmYfHoxvqXX_IX6sq0DgYpXnYx"
   }
 });
+if (process.client) {
+  reviewClient.interceptors.request.use(config => {
+    NProgress.start();
+    return config;
+  });
+
+  reviewClient.interceptors.response.use(response => {
+    NProgress.done();
+    return response;
+  });
+}
 
 export default {
   getReviews() {
