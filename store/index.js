@@ -26,7 +26,7 @@ export const mutations = {
 export const actions = {
   fetchReviews({ commit }) {
     commit("RESET_REVIEWS");
-    EventService.getReviews()
+    return EventService.getReviews()
       .then(response => {
         commit("SET_REVIEWS", response.data.reviews);
       })

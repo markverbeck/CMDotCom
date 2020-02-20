@@ -65,7 +65,7 @@
 <script>
 import { mapState } from "vuex";
 import Hero from "@/components/Hero.vue";
-
+import NProgress from "nprogress";
 export default {
   components: {
     Hero
@@ -76,7 +76,12 @@ export default {
     };
   },
   created() {
-    this.$store.dispatch("fetchReviews");
+    if (process.client) {
+      NProgress.start();
+      this.$store.dispatch("fetchReviews").then(() => {
+        NProgress.done();
+      });
+    }
   },
   computed: {
     ...mapState(["reviews"])
