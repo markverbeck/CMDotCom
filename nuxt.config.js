@@ -21,8 +21,7 @@ module.exports = {
    */
   loading: {
     color: "#38b2ac",
-    height: "5px",
-    duration: 5000
+    height: "5px"
   },
   /*
    ** Global CSS
