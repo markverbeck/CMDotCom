@@ -3,6 +3,7 @@
     <div class="body flex flex-col min-h-screen ">
       <Navbar />
       <nuxt class="flex-1" />
+      <NotificationContainer />
       <Footer />
     </div>
   </div>
@@ -10,11 +11,12 @@
 <script>
 import Navbar from "@/components/NavBar.vue";
 import Footer from "@/components/Footer.vue";
-import "nprogress/nprogress.css";
+import NotificationContainer from "@/components/NotificationContainer.vue";
 export default {
   components: {
     Navbar,
-    Footer
+    Footer,
+    NotificationContainer
   }
 };
 </script>

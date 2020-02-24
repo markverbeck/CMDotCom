@@ -3,10 +3,14 @@
     <Hero />
     <h1
       class="text-center text-2xl text-teal-500 font-bold mb-10 bg-white w-11/12 sm:w-5/6 md:w-1/3 m-auto border-teal-500 shadow-lg border-2 rounded pt-5 pb-5 info relative"
-    >Info</h1>
+    >
+      Info
+    </h1>
     <div class="flex-1 flex items-center">
       <div class="flex w-11/12 sm:w-5/6 m-auto pt-10 pb-10">
-        <div class="bg-white p-4 md:p-8 imgDiv border-4 border-teal-500 shadow-lg">
+        <div
+          class="bg-white p-4 md:p-8 imgDiv border-4 border-teal-500 shadow-lg"
+        >
           <div class="mb-5 md:mb-10 m-auto">
             <img
               src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/two-women-gossiping-in-studio-royalty-free-image-72131155-1558549225.jpg?crop=0.784xw:1.00xh;0.146xw,0&resize=480:*"
@@ -15,8 +19,12 @@
             />
           </div>
 
-          <h2 class="text-center text-2xl text-teal-500 font-bold">Carley Martin Verbeck</h2>
-          <h3 class="text-center text-gray-600">Hair Stylist / Makeup Artist</h3>
+          <h2 class="text-center text-2xl text-teal-500 font-bold">
+            Carley Martin Verbeck
+          </h2>
+          <h3 class="text-center text-gray-600">
+            Hair Stylist / Makeup Artist
+          </h3>
           <hr class="mt-2" />
           <div class="mt-12">
             <p>
@@ -62,10 +70,19 @@
 <script>
 import Logo from "~/components/Logo.vue";
 import Hero from "@/components/Hero.vue";
+import NProgress from "nprogress";
+
 export default {
   components: {
     Logo,
     Hero
+  },
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
   }
 };
 </script>

@@ -4,7 +4,8 @@ export const state = () => {
   return {
     reviews: [],
     test: "test",
-    images: []
+    images: [],
+    notifications: []
   };
 };
 
@@ -20,28 +21,54 @@ export const mutations = {
   },
   RESET_IMAGES(state) {
     state.images = [];
+  },
+  SET_NOTIFICATION(state, notification) {
+    const ID = Math.floor(Math.random() * 100 + 1);
+    state.notifications.push({
+      ...notification,
+      id: ID
+    });
+  },
+  DELETE_NOTIFICATION(state, notification) {
+    state.notifications = state.notifications.filter(
+      notif => notif.id !== notification.id
+    );
   }
 };
 
 export const actions = {
-  fetchReviews({ commit }) {
+  fetchReviews({ commit, dispatch }) {
     commit("RESET_REVIEWS");
     return EventService.getReviews()
       .then(response => {
         commit("SET_REVIEWS", response.data.reviews);
       })
       .catch(err => {
-        console.log(err);
+        const error = {
+          type: "error",
+          message: "There was a problem fetching the testimonials"
+        };
+        dispatch("setNotif", error);
       });
   },
-  fetchImages({ commit }) {
+  fetchImages({ commit, dispatch }) {
     commit("RESET_IMAGES");
-    EventService.getImages()
+    return EventService.getImages()
       .then(response => {
         commit("SET_IMAGES", response.Contents);
       })
       .catch(err => {
-        console.log(err);
+        const error = {
+          type: "error",
+          message: "There was a problem fetching the images"
+        };
+        dispatch("setNotif", error);
       });
+  },
+  setNotif({ commit }, notification) {
+    commit("SET_NOTIFICATION", notification);
+  },
+  deleteNotif({ commit }, notification) {
+    commit("DELETE_NOTIFICATION", notification);
   }
 };

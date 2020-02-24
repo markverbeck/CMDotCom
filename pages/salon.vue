@@ -25,6 +25,14 @@ import Hero from "@/components/Hero.vue";
 export default {
   components: {
     Hero
+  },
+
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+
+      setTimeout(() => this.$nuxt.$loading.finish(), 500);
+    });
   }
 };
 </script>
