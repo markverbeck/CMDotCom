@@ -82,8 +82,13 @@ export default {
       return evenImgs;
     }
   },
-  created() {
-    this.$store.dispatch("fetchImages");
+  mounted() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start();
+      this.$store.dispatch("fetchImages").then(() => {
+        this.$nuxt.$loading.finish();
+      });
+    });
   }
 };
 </script>

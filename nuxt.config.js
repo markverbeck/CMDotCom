@@ -23,7 +23,7 @@ module.exports = {
     color: "#38b2ac",
     height: "5px",
     duration: "5000",
-    continuous: true
+    continuous: false
   },
   /*
    ** Global CSS
